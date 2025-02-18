@@ -1,0 +1,22 @@
+@startuml
+skinparam Linetype ortho 
+entity "your dad" as e01{
+    *e01_id: number <<generated>>
+    --
+    *name: text
+    description: text
+
+}
+
+entity "ur mom" as e02{
+    *e02_id:number <<generated>>
+    --
+    *e01_id: number <<FK>>
+    details:text
+}
+
+e01}|..o|e02
+
+e01 "1"--"N" e02
+
+@enduml
